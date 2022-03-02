@@ -18,18 +18,18 @@ export class ProjetService
     {
         return this.httpClient.delete(this.baseURL + "/" + id); // http://localhost:8080/users/5
     }
-    public save(user: any): Observable<any>
+    public save(projet: any): Observable<any>
     {
-        return this.httpClient.post(this.baseURL, user);
+        return this.httpClient.post(this.baseURL, projet);
     }
     public findOne(id: number): Observable<any>
     {
         return this.httpClient.get(this.baseURL + "/" + id); // http://localhost:8080/users/5
     }
 
-    public update(user: any): Observable<any>
+    public update(projet: any): Observable<any>
     {
-        let userParse = JSON.parse(user);
-        return this.httpClient.put(this.baseURL + "/" + userParse.idUtilisateur, userParse);
+        let projetParse = JSON.parse(projet);
+        return this.httpClient.put(this.baseURL + "/" + projetParse.idProjet, projetParse);
     }
 }

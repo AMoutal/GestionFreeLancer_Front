@@ -17,18 +17,18 @@ export class JobOwnerService {
     {
         return this.httpClient.delete(this.baseURL + "/" + id); // http://localhost:8080/users/5
     }
-    public save(user: any): Observable<any>
+    public save(jobOwner: any): Observable<any>
     {
-        return this.httpClient.post(this.baseURL, user);
+        return this.httpClient.post(this.baseURL, jobOwner);
     }
     public findOne(id: number): Observable<any>
     {
         return this.httpClient.get(this.baseURL + "/" + id); // http://localhost:8080/users/5
     }
 
-    public update(user: any): Observable<any>
+    public update(jobOwner: any): Observable<any>
     {
-        let userParse = JSON.parse(user);
-        return this.httpClient.put(this.baseURL + "/" + userParse.idUtilisateur, userParse);
+        let jobOwnerParse = JSON.parse(jobOwner);
+        return this.httpClient.put(this.baseURL + "/" + jobOwnerParse.idUser, jobOwnerParse);
     }
 }
