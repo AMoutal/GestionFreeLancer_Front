@@ -1,5 +1,5 @@
-import { JobOwner } from "./jobOwner";
 import { Freelancer } from "./freelancer";
+import { JobOwner } from "./job-owner";
 
 export class EvaluationCandidat {
     idEvaluationCandidat!:number;
