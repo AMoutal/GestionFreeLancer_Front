@@ -1,3 +1,4 @@
+import { Adresse } from "./adresse";
 import { EvaluationEntreprise } from "./evaluation-entreprise";
 import { JobOwner } from "./job-owner";
 
