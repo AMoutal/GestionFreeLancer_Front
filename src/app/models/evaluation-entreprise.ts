@@ -4,7 +4,7 @@ import { Entreprise } from "./entreprise";
 
 export class EvaluationEntreprise {
 
-    idCandidature !: number;
+    idEvaluationEntreprise!: number;
     score !: number;
     commentaire !:String;
     entreprise !:Entreprise;
