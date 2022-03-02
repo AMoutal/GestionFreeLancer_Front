@@ -4,27 +4,31 @@ import { Router } from '@angular/router';
 import { AppService } from 'src/app/app.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+    selector: 'app-login',
+    templateUrl: './login.component.html',
+    styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit, OnDestroy {
-  credentials = { username: '', password: '' };
-  constructor(private appService: AppService, private httpClient: HttpClient, private router: Router) 
-  { }
+export class LoginComponent implements OnInit, OnDestroy
+{
+    credentials = { username: '', password: '' };
+    constructor(private appService: AppService, private httpClient: HttpClient, private router: Router)
+    { }
 
-  login() {
-    this.appService.authenticate(this.credentials, () => {
-      this.router.navigateByUrl("/dashboard")
-    });
-    return false;
-  }
+    login()
+    {
+        this.appService.authenticate("user", this.credentials, () =>
+        {
+            this.router.navigateByUrl("/dashboard")
+        });
+    }
 
-  ngOnInit() {
-  }
+    ngOnInit()
+    {
+    }
 
-  ngOnDestroy() {
-  }
+    ngOnDestroy()
+    {
+    }
 
 }
 
