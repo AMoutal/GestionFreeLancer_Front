@@ -25,6 +25,7 @@ import { EvaluationEntrepriseService } from './services/evaluation-entreprise.se
 import { UtilisateurService } from './services/utilisateur.service';
 import { EntrepriseService } from './services/entreprise.service';
 
+
 @Injectable()
 export class XhrInterceptor implements HttpInterceptor {
 intercept(req:HttpRequest<any>, next: HttpHandler){

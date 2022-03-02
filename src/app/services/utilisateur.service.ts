@@ -26,4 +26,5 @@ export class UtilisateurService {
     var userParse = JSON.parse(user);
     return this.httpClient.put(this.baseURL+"/"+userParse.idUser, userParse);
   }
+  
 }
