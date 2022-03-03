@@ -11,12 +11,12 @@ export class AppService
     responseAll: any;
     isAdmin = false;
     isSuperuser = false;
+    idUserStock:any;
     constructor(private httpClient: HttpClient) { }
     authenticate(type: string, credentials, callback)
     {
         const headers = new HttpHeaders(
             credentials ? { authorization: 'Basic ' + btoa(credentials.username + ':' + credentials.password) } : {});
-        console.log("machin");
         console.log(headers.get("authorization"));
         console.log(credentials);
         this.httpClient.get("http://localhost:8080/login/" + type, { headers: headers }).subscribe(
@@ -24,6 +24,7 @@ export class AppService
             {
                 console.log("response : " + response);
                 this.responseAll = response;
+                this.idUserStock=this.responseAll['idUser'];
                 if (this.responseAll['username'] != null)
                 {
                     console.log("isAdmin= " + this.isAdmin);

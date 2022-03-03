@@ -26,6 +26,8 @@ import { UtilisateurService } from './services/utilisateur.service';
 import { EntrepriseService } from './services/entreprise.service';
 import { LoginFreelancerComponent } from './pages/login-freelancer/login-freelancer.component';
 import { LoginJobOwnerComponent } from './pages/login-job-owner/login-job-owner.component';
+import { FreelancersComponent } from './pages/freelancers/freelancers.component';
+import { EditFreelancerComponent } from './pages/edit-freelancer/edit-freelancer.component';
 
 
 @Injectable()
@@ -53,7 +55,9 @@ intercept(req:HttpRequest<any>, next: HttpHandler){
     AdminLayoutComponent,
     AuthLayoutComponent,
     LoginFreelancerComponent,
-    LoginJobOwnerComponent
+    LoginJobOwnerComponent,
+    FreelancersComponent,
+    EditFreelancerComponent
   ],
   providers: [
     AppService,
