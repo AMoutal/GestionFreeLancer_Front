@@ -20,7 +20,7 @@ export class UtilisateurService {
     return this.httpClient.post(this.baseURL,user);
   }
   public findOne(id:number):Observable<any>{
-    return this.httpClient.get(this.baseURL+"/"+id)
+    return this.httpClient.get(this.baseURL+"/"+id);
   }
   public update(user:any):Observable<any>{
     var userParse = JSON.parse(user);
