@@ -1,86 +1,79 @@
-<div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" style="max-height: 600px; background-image: url(assets/img/theme/plan3.png); background-size: cover; background-position: center top;">
+<div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" style="max-height: 600px; background-image: url(assets/img/theme/team1.png); background-size: cover; background-position: center top;">
     <!-- Mask -->
     <span class="mask bg-gradient-danger opacity-1"></span>
     <div class="container-fluid d-flex align-items-center">
       <div class="row">
-        <div class="col-lg-7 col-md-10">
+        <div class="col-lg-10 col-md-10">
           <h1 class="display-2 text-white">Freelancers</h1>
-          <p class="text-white mt-0 mb-5">Editez les données d'un freelancer</p>
+          <p class="text-white mt-0 mb-5">Editez les données des freelancers</p>
         </div>
       </div>
     </div>
   </div>
-<div class="container-fluid mt--7">
-    <div class="row">
-      
-      <div class="col-xl-12 order-xl-1">
-        <div class="card bg-secondary shadow">
-          <div class="card-header bg-white border-0">
-            <div class="row align-items-center">
-              <div class="col-8">
-                <h3 class="mb-0">Données freelancer</h3>
+  <!-- Page content -->
+    <div class="container-fluid mt--7">
+      <div class="row justify-content-center">
+          <div class="col-lg-6 col-md-8">
+              <div class="card bg-secondary shadow border-0">
+                  <div class="card-body px-lg-5 py-lg-5">
+                      <div class="text-center text-muted mb-4">
+                          <p>Mettre à jour les données freelancers</p>
+                      </div>
+                      <form role="form"  [formGroup]="editForm">
+                          <div class="form-group">
+                            <label>Nom</label>
+                              <div class="input-group input-group-alternative mb-3">
+                                  <div class="input-group-prepend">
+                                      <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
+                                  </div>
+                                  <input class="form-control" [(ngModel)]="freelancer.nomUser" name="nomUser" 
+                                      type="text">
+                              </div>
+                          </div>
+                          <div class="form-group">
+                            <label>Prénom</label>
+                              <div class="input-group input-group-alternative mb-3">
+                                  <div class="input-group-prepend">
+                                      <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                                  </div>
+                                  <input class="form-control" [(ngModel)]="freelancer.prenomUser" name="prenomUser"
+                                       type="text">
+                              </div>
+                          </div>
+                          <div class="form-group">
+                            <label>Statut</label>
+                              <div>
+                                  <input class="form-control" [(ngModel)]="freelancer.disponible" name="disponible"
+                                       type="checkbox">
+                              </div>
+                          </div>
+                          <div class="form-group">
+                            <label>Métier</label>
+                              <div class="input-group input-group-alternative">
+                                  <div class="input-group-prepend">
+                                      <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                                  </div>
+                                  <input class="form-control" [(ngModel)]="freelancer.metier" name="metier"
+                                       type="text">
+                              </div>
+                          </div>
+                          <div class="form-group">
+                            <label>Email</label>
+                              <div class="input-group input-group-alternative">
+                                  <div class="input-group-prepend">
+                                      <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                                  </div>
+                                  <input class="form-control" [(ngModel)]="freelancer.emailUser" name="emailUser"
+                                       type="text">
+                              </div>
+                          </div>
+                          <div class="text-center">
+                              <button type="button" class="btn btn-primary mt-4" (click)="updateFreelancer()">Sauvegarder les changements</button>
+                              <button type="button" class="btn btn-danger mt-4" (click)="cancel()">Annuler</button>
+                          </div>
+                      </form>
+                  </div>
               </div>
-              <div class="col-4 text-right">
-                <a href="#!" class="btn btn-sm btn-default">Editer les données</a>
-              </div>
-            </div>
           </div>
-          <div class="card-body">
-            <form >
-              <h6 class="heading-small text-muted mb-4">Informations utilisateur</h6>
-              <div class="pl-lg-4">
-                <div class="row">
-                  <div class="col-lg-6">
-                    <div class="form-group">
-                      <label class="form-control-label" for="input-username">Username</label>
-                      <input type="email" id="input-email" class="form-control form-control-alternative" placeholder="jesse@example.com">  
-                    </div>
-                  </div>
-                  <div class="col-lg-6">
-                    <div class="form-group">
-                      <label class="form-control-label" for="input-email">Email</label>
-                      <input type="email" id="input-email" class="form-control form-control-alternative" placeholder="jesse@example.com">
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-lg-6">
-                    <div class="form-group">
-                      <label class="form-control-label" for="input-first-name">Prénom</label>
-                      <input type="text" id="input-first-name" class="form-control form-control-alternative" placeholder="First name" value="Lucky">
-                    </div>
-                  </div>
-                  <div class="col-lg-6">
-                    <div class="form-group">
-                      <label class="form-control-label" for="input-last-name">Nom</label>
-                      <input type="text" id="input-last-name" class="form-control form-control-alternative" placeholder="Last name" value="Jesse">
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <hr class="my-4" />
-              <!-- Informations pro -->
-               <h6 class="heading-small text-muted mb-4">Informations profesionnelles</h6>
-               <div class="pl-lg-4">
-                <div class="row">
-                  <div class="col-lg-6">
-                    <div class="form-group">
-                      <label class="form-control-label" for="input-username">Métier</label>
-                      <input type="text" id="input-username" class="form-control form-control-alternative" placeholder="Username" value="lucky.jesse">
-                    </div>
-                  </div>
-                  <div class="col-lg-6">
-                    <div class="form-group">
-                      <label class="form-control-label" for="input-disponibilite">Disponibilité  </label>
-                      <br>
-                      <input type="checkbox" id="input-email" class="checkbox" >
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
       </div>
-    </div>
-  </div>
+      </div>

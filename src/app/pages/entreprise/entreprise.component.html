@@ -1,5 +1,5 @@
 <div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center"
-    style="max-height: 600px; background-image: url(assets/img/theme/plan3.png); background-size: cover; background-position: center top;">
+    style="max-height: 600px; background-image: url(assets/img/theme/entreprise.png); background-size: cover; background-position: center top;">
     <!-- Mask -->
     <span class="mask bg-gradient-danger opacity-1"></span>
     <div class="container-fluid d-flex align-items-center">
@@ -11,6 +11,7 @@
         </div>
     </div>
 </div>
+
 <!-- Page content -->
 <div class="container-fluid mt--7">
     <!-- Table -->
@@ -18,7 +19,7 @@
         <div class="col">
             <div class="card shadow">
                 <div class="card-header border-0">
-                    <h3 class="mb-0">Card tables</h3>
+                    <h3 class="mb-0">Liste des entreprises</h3>
                 </div>
                 <div class="table-responsive">
                     <table class="table align-items-center table-flush">
@@ -30,7 +31,6 @@
                                 <th scope="col">Pays</th>
                                 <th scope="col">Recruteurs</th>
                                 <th scope="col">Action</th>
-                                <th scope="col"></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -86,67 +86,70 @@
         </div>
     </div>
 
-    <div class="row justify-content-center">
-        <div class="col-lg-6 col-md-8">
-            <div class="card bg-secondary shadow border-0">
+ <br><br><br><br><br><br>
+</div>
+<div class="container-fluid mt--7">
+<div class="row justify-content-center">
+    <div class="col-lg-6 col-md-8">
+        <div class="card bg-secondary shadow border-0">
 
-                <div class="card-body px-lg-5 py-lg-5">
-                    <div class="text-center text-muted mb-4">
-                        <p>Ajoutez une entreprise !</p>
-                    </div>
-                    <form role="form">
-                        <div class="form-group">
-                            <div class="input-group input-group-alternative mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
-                                </div>
-                                <input class="form-control" [(ngModel)]="entreprise.nom" name="nom" placeholder="Nom"
-                                    type="text">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="input-group input-group-alternative mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="ni ni-email-83"></i></span>
-                                </div>
-                                <input class="form-control" [(ngModel)]="entreprise.adresse.adresse"
-                                    placeholder="Adresse" type="text">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="input-group input-group-alternative">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="ni ni-email-83"></i></span>
-                                </div>
-                                <input class="form-control" [(ngModel)]="entreprise.adresse.ville" name="adresse.ville"
-                                    placeholder="Ville" type="text">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="input-group input-group-alternative">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="ni ni-email-83"></i></span>
-                                </div>
-                                <input class="form-control" [(ngModel)]="entreprise.adresse.cp" name="adresse.cp"
-                                    placeholder="Code Postal" type="text">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="input-group input-group-alternative">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="ni ni-email-83"></i></span>
-                                </div>
-                                <input class="form-control" [(ngModel)]="entreprise.adresse.pays" name="adresse.pays"
-                                    placeholder="Pays" type="text">
-                            </div>
-                        </div>
-                        <div class="text-center">
-                            <button type="button" class="btn btn-primary mt-4" (click)="saveEntreprise()">Ajouter une
-                                entreprise</button>
-                        </div>
-                    </form>
+            <div class="card-body px-lg-5 py-lg-5">
+                <div class="text-center text-muted mb-4">
+                    <p>Ajoutez une entreprise !</p>
                 </div>
+                <form role="form">
+                    <div class="form-group">      
+                        <div class="input-group input-group-alternative mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
+                            </div>
+                            <input class="form-control" [(ngModel)]="entreprise.nom" name="nom" placeholder="Nom"
+                                type="text">
+                        </div>
+                    </div>
+                    <div class="form-group">                   
+                        <div class="input-group input-group-alternative mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                            </div>
+                            <input class="form-control" [(ngModel)]="entreprise.adresse.adresse"
+                                placeholder="Adresse" type="text">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group input-group-alternative">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                            </div>
+                            <input class="form-control" [(ngModel)]="entreprise.adresse.ville" name="adresse.ville"
+                                placeholder="Ville" type="text">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group input-group-alternative">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                            </div>
+                            <input class="form-control" [(ngModel)]="entreprise.adresse.cp" name="adresse.cp"
+                                placeholder="Code Postal" type="text">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group input-group-alternative">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                            </div>
+                            <input class="form-control" [(ngModel)]="entreprise.adresse.pays" name="adresse.pays"
+                                placeholder="Pays" type="text">
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button type="button" class="btn btn-primary mt-4" (click)="saveEntreprise()">Ajouter une
+                            entreprise</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
+</div>
 </div>
