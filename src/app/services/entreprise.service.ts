@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class EntrepriseService
 {
-    private baseURL = "http://localhost:8080/users";
+    private baseURL = "http://localhost:8080/entreprise";
     // injection de la dépendance qui nous permet d'utiliser les verbes http :GET,PUT,DELETE et POST
     constructor(private httpClient: HttpClient) { }
     public findAll(): Observable<any>

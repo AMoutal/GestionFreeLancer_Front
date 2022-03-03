@@ -1,6 +1,6 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Injectable, NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HttpHandler, HttpInterceptor, HttpRequest, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
@@ -26,6 +26,8 @@ import { UtilisateurService } from './services/utilisateur.service';
 import { EntrepriseService } from './services/entreprise.service';
 import { LoginFreelancerComponent } from './pages/login-freelancer/login-freelancer.component';
 import { LoginJobOwnerComponent } from './pages/login-job-owner/login-job-owner.component';
+import { EntrepriseComponent } from './pages/entreprise/entreprise.component';
+import { EditEntrepriseComponent } from './pages/edit-entreprise/edit-entreprise.component';
 
 
 @Injectable()
@@ -40,6 +42,7 @@ intercept(req:HttpRequest<any>, next: HttpHandler){
 
 @NgModule({
   imports: [
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
@@ -53,7 +56,9 @@ intercept(req:HttpRequest<any>, next: HttpHandler){
     AdminLayoutComponent,
     AuthLayoutComponent,
     LoginFreelancerComponent,
-    LoginJobOwnerComponent
+    LoginJobOwnerComponent,
+    EntrepriseComponent,
+    EditEntrepriseComponent
   ],
   providers: [
     AppService,
