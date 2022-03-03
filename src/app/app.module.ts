@@ -28,6 +28,10 @@ import { LoginFreelancerComponent } from './pages/login-freelancer/login-freelan
 import { LoginJobOwnerComponent } from './pages/login-job-owner/login-job-owner.component';
 import { EntrepriseComponent } from './pages/entreprise/entreprise.component';
 import { EditEntrepriseComponent } from './pages/edit-entreprise/edit-entreprise.component';
+import { FreelancersComponent } from './pages/freelancers/freelancers.component';
+import { TestComponent } from './pages/test/test.component';
+import { ListeProjetComponent } from './pages/admin/liste-projet/liste-projet.component';
+import { EditFreelancerComponent } from './pages/edit-freelancer/edit-freelancer.component';
 
 
 @Injectable()
@@ -58,7 +62,12 @@ intercept(req:HttpRequest<any>, next: HttpHandler){
     LoginFreelancerComponent,
     LoginJobOwnerComponent,
     EntrepriseComponent,
-    EditEntrepriseComponent
+    FreelancersComponent,
+    EditEntrepriseComponent,
+    TestComponent,
+    FreelancersComponent,
+    EditFreelancerComponent,
+    ListeProjetComponent
   ],
   providers: [
     AppService,

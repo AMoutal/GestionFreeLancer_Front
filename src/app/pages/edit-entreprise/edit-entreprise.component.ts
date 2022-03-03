@@ -22,7 +22,7 @@ export class EditEntrepriseComponent implements OnInit
         if (entrepriseId == null)
         {
             alert("Action invalide");
-            this.router.navigate(["entreprise"]);
+            this.router.navigate(["entreprises"]);
             return;
         }
         this.editEntreprise = this.formBuilder.group(
@@ -34,8 +34,9 @@ export class EditEntrepriseComponent implements OnInit
                         adresse: ['', Validators.required],
                         ville: ['', Validators.required],
                         cp: ['', Validators.required],
-                        pays: ['', Validators.required]
-                    })
+                        pays: ['', Validators.required],
+                    }),
+                email: ['', Validators.required]    
             });
         this.entrepriseService.findOne(+entrepriseId).subscribe(data => { this.editEntreprise.patchValue(data); })
     }
@@ -43,11 +44,11 @@ export class EditEntrepriseComponent implements OnInit
     updateEntreprise()
     {
         let varJSON = JSON.stringify(this.editEntreprise.value);
-        this.entrepriseService.update(varJSON).subscribe(() => { this.router.navigate(["entreprise"]); });
+        this.entrepriseService.update(varJSON).subscribe(() => { this.router.navigate(["entreprises"]); });
     }
 
     cancel()
     {
-        this.router.navigate(["entreprise"]);
+        this.router.navigate(["entreprises"]);
     }
 }

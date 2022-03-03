@@ -1,6 +1,6 @@
 <div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center"
     style="max-height: 600px; background-image: url(assets/img/theme/entreprise.png); background-size: cover; background-position: center top;">
-    <!-- Mask -->
+	<!-- Mask -->
     <span class="mask bg-gradient-danger opacity-1"></span>
     <div class="container-fluid d-flex align-items-center">
         <div class="row">
@@ -24,62 +24,68 @@
                     </div>
                     <form role="form" [formGroup]="editEntreprise">
                         <div class="form-group">
-                            <label>Nom</label>
                             <div class="input-group input-group-alternative mb-3">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
                                 </div>
-                                <input [(ngModel)]="entreprise.nom" formControlName="nom" class="form-control"  placeholder="Nom"
-                                    type="text">
+                                <input [(ngModel)]="entreprise.nom" formControlName="nom" class="form-control"
+                                    placeholder="Nom" type="text">
                             </div>
                         </div>
                         <div formGroupName="adresse">
-                        <div class="form-group">
-                            <label>Adresse</label>
-                            <div class="input-group input-group-alternative mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                            <div class="form-group">
+                                <div class="input-group input-group-alternative mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                                    </div>
+                                    <input class="form-control" [(ngModel)]="entreprise.adresse.adresse"
+                                        formControlName="adresse" placeholder="Adresse" type="text">
                                 </div>
-                                <input class="form-control" [(ngModel)]="entreprise.adresse.adresse" formControlName="adresse"
-                                    placeholder="Adresse" type="text">
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group input-group-alternative">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                                    </div>
+                                    <input class="form-control" [(ngModel)]="entreprise.adresse.ville"
+                                        formControlName="ville" placeholder="Ville" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group input-group-alternative">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                                    </div>
+                                    <input class="form-control" [(ngModel)]="entreprise.adresse.cp" formControlName="cp"
+                                        placeholder="Code Postal" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group input-group-alternative">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                                    </div>
+                                    <input class="form-control" [(ngModel)]="entreprise.adresse.pays"
+                                        formControlName="pays" placeholder="Pays" type="text">
+                                </div>
                             </div>
                         </div>
+
                         <div class="form-group">
-                            <label>Ville</label>
                             <div class="input-group input-group-alternative">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                                 </div>
-                                <input class="form-control" [(ngModel)]="entreprise.adresse.ville" formControlName="ville"
-                                    placeholder="Ville" type="text">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label>Code Postal</label>
-                            <div class="input-group input-group-alternative">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="ni ni-email-83"></i></span>
-                                </div>
-                                <input class="form-control" [(ngModel)]="entreprise.adresse.cp" formControlName="cp"
-                                    placeholder="Code Postal" type="text">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label>Pays</label>
-                            <div class="input-group input-group-alternative">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="ni ni-email-83"></i></span>
-                                </div>
-                                <input class="form-control" [(ngModel)]="entreprise.adresse.pays" formControlName="pays"
-                                    placeholder="Pays" type="text">
-                            </div>
-                        </div>
+                                <input class="form-control" [(ngModel)]="entreprise.email" formControlName="email"
+                                    placeholder="Email" type="email">
+                            </div>  
                         </div>
                         <div class="text-center">
-                                <button type="button" class="btn btn-primary mt-4" (click)="updateEntreprise()">Sauvegarder les changements</button>
-                                <button type="button" class="btn btn-danger mt-4" (click)="cancel()">Annuler</button>
-                        
-                            </div>
+                            <button type="button" class="btn btn-primary mt-4" (click)="updateEntreprise()">Sauvegarder
+                                les changements</button>
+                            <button type="button" class="btn btn-danger mt-4" (click)="cancel()">Annuler</button>
+
+                        </div>
                     </form>
                 </div>
             </div>
