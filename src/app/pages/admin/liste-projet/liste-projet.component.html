@@ -1,0 +1,44 @@
+
+
+
+  <div class="">
+    <table class="table align-items-center table-flush">
+      <thead class="thead-light">
+        <tr >
+          <th scope="col">num</th>
+          <th scope="col">nom</th>
+          <th scope="col">description</th>
+          <th scope="col">date debut</th>
+          <th scope="col">date fin</th>
+          <th scope="col">remuneration</th>  
+          <th scope="col">etat</th>  
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let p of listprojet">
+          <th scope="row">
+            {{p.idProjet}}
+          </th>
+          <td>
+            {{p.nom}}
+          </td>
+          <td>
+            {{p.description}} 
+          </td>
+          <td>
+            {{p.dateDebut}} 
+          </td>
+          <td>
+            {{p.dateFin}}
+          </td>
+          <td>
+            {{p.etat}}
+          </td>
+          <td>
+            {{p.etat}}
+          </td>
+        </tr>
+         
+  
+      </tbody>
+    </table>
