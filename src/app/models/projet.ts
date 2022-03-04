@@ -4,7 +4,7 @@ import { Candidature } from "./candidature";
 
 export class Projet
 {
-    idUtilisateur!:number;
+    idProjet!:number;
     nom!:string;
     remuneration!:number;
     description!:string;
