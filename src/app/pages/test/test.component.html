@@ -1,8 +1,75 @@
+<div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center"
+    style="max-height: 600px; background-image: url(assets/img/theme/test-vie-professionnelle-1024x605.jpg); background-size: cover; background-position: center top;">
+    <!-- Mask -->
+    <span class="mask bg-gradient-danger opacity-1"></span>
+    <div class="container-fluid d-flex align-items-center">
+        <div class="row">
+            <div class="col-lg-7 col-md-10">
+                <h1 class="display-2 text-white">Test</h1>
+                <p class="text-white mt-0 mb-5">Montrez à vos recruteurs que vous êtes une fusée !!</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid mt--7">
+  <div class="row">
+    <div class="col">
+      <div class="card shadow">
+        <div class="card-header border-0">
+          <h3 class="mb-0">Liste des tests</h3>
+        </div>
+        <div class="table-responsive">
+          <table class="table align-items-center table-flush">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">Type</th>
+                <th scope="col">Niveau</th>
+                <th scope="col">Action</th>
+                <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let t of tests">
+                <th scope="row">
+                  <div class="media align-items-center">
+                    <div class="media-body">
+                      <span class="mb-0 text-sm">
+                        {{t.type}}
+                      </span>
+                    </div>
+                  </div>
+                </th>
+                <th scope="row">
+                  <div class="media align-items-center">
+                    <div class="media-body">
+                      <span class="mb-0 text-sm">
+                        {{t.niveau}}
+                      </span>
+                    </div>
+                  </div>
+                </th>
+                <th class="align-item-center">
+                  <button _ngcontent-c5="" class="btn btn-1 btn-primary align-items-right"
+                  type="button" (click)="editTest(t)">Modifier</button>
+                  <button _ngcontent-c5="" class="btn btn-danger align-items-right"
+                  type="button" (click)="deleteTest(t.idTest)">Supprimer</button>
+                </th>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<div class="col-xl-8 order-xl-1">
+<br/>
+<br/>
+<div class="row justify-content-center">
+  <div class="col-xl-8 order-xl-1">
     <div class="card bg-secondary shadow">
       <div class="card-header bg-white border-0">
-        <div class="row align-items-center" style="text-align: right">
+        <div class="row align-items-center">
             <div class="col-8">
                 <h3 class="mb-0">Ajouter un test</h3>
             </div>
@@ -29,74 +96,10 @@
             </div>
                 <hr class="my-4" />   
             <div class="col-4 text-right">
-              <a href="#!" class="btn btn-sm btn-primary">Ajouter</a>              
+              <button class="btn btn-sm btn-primary">Ajouter</button>              
             </div>       
-
           </form>
-          <hr class="my-4" />
-          <!-- Description -->
-          <h6 class="heading-small text-muted mb-4">Liste des tests</h6>
-          <div class="table-responsive">
-            <table class="table align-items-center table-flush">
-                <thead class="thead-light">
-
-                </thead>
-            </table>
-          </div>
       </div>
     </div>
 </div>
-
-
-
-<!-- Projects table -->
-<!--
-<div class="table-responsive">
-    
-
-    <table class="table align-items-center table-flush">
-        <thead class="thead-light">
-          <tr>
-            <th scope="col">Liste des tests</th>
-            <th scope="col"><label>Type</label></th>
-            <th scope="col"><label>Niveau</label></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">
-              /nom du test/
-            </th>
-            <td>
-              4,569
-            </td>
-            <td>
-              340
-            </td>
-            <td>
-              <i class="fas fa-arrow-up text-success mr-3"></i> 46,53%
-            </td>
-          </tr>
-          
-        </tbody>
-      </table>
-
-  </div>
-
-<div>
-    <h1>La liste des tests</h1>
-    <table>
-        <tr>
-            <th>Type</th>
-            <th>Niveau</th>
-            <th>Action</th>
-        </tr>
-        <tr *ngFor="let t of tests">
-            <td>{{t.type}}</td>
-            <td>{{t.niveau}}</td>
-            <td><button (click)="saveTest(t.idTest)">save</button></td>
-        </tr>
-    </table>
-    </div>
-
--->
+</div>
