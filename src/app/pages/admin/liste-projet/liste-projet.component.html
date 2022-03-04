@@ -1,44 +1,105 @@
 
 
+    <div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" style="max-height: 600px; background-image: url(assets/img/theme/team1.png); background-size: cover; background-position: center top;">
+      <!-- Mask -->
+      <span class="mask bg-gradient-danger opacity-1"></span>
+      <div class="container-fluid d-flex align-items-center">
+        <div class="row">
+          <div class="col-lg-7 col-md-10">
+            <h1 class="display-2 text-white">PROJETS</h1>
+            <p class="text-white mt-0 mb-5">Consultez la liste des projet!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Page content -->
+    <div class="container-fluid mt--7">
+      <!-- Table -->
+      <div class="row">
+        <div class="col">
+          <div class="card shadow">
+            <div class="card-header border-0">
+              <h3 class="mb-0">Liste des projets</h3>
+            </div>
+            <div class="table-responsive">
+              <table class="table align-items-center table-flush">
+                <thead class="thead-light">
+                  <tr>
+                    <th scope="col">N°</th>
+                    <th scope="col">Nom</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Date debut</th>
+                    <th scope="col">Date fin</th>
+                    <th scope="col">Remuneration</th>
+                    <th scope="col">Etat</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let p of listprojet">
+                    <th scope="row">
+                     
+                        <div class="media-body">
+                          <span class="mb-0 text-sm">{{p.idProjet}}</span>
+                        </div>
+                      
+                    </th>
+                    <td>
+                      
+                      <span class="badge badge-dot mr-4">
+                        {{p.nom}}
+                      </span>                  
+                    </td>
+                    <td>
+                      
+                      <span class="badge badge-dot mr-4">
+                        {{p.description}}
+                      </span>                  
+                    </td>
+                    <td>
+                      <span class="badge badge-dot mr-4">
+                        {{p.dateDebut}}
+                         </span>  
+                    </td>
+                    <td>
+                      <span class="badge badge-dot mr-4">
+                        {{p.dateFin}}
+                         </span>  
+                    </td>
+                    <td>
+                      <span class="badge badge-dot mr-4">
+                        {{p.remuneration}}
+                         </span>  
+                    </td>
+                    
+    
+                    <td *ngIf=p.etat>
+                      <span class="badge badge-dot mr-4">
+                          <i class="bg-success"></i> Réalisé
+                      </span>
+                    </td>
+                    <td *ngIf=!p.etat>
+                      <span class="badge badge-dot mr-4">
+                          <i class="bg-warning"></i> Non Réalisé
+                      </span>
+                    </td>
 
-  <div class="">
-    <table class="table align-items-center table-flush">
-      <thead class="thead-light">
-        <tr >
-          <th scope="col">num</th>
-          <th scope="col">nom</th>
-          <th scope="col">description</th>
-          <th scope="col">date debut</th>
-          <th scope="col">date fin</th>
-          <th scope="col">remuneration</th>  
-          <th scope="col">etat</th>  
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let p of listprojet">
-          <th scope="row">
-            {{p.idProjet}}
-          </th>
-          <td>
-            {{p.nom}}
-          </td>
-          <td>
-            {{p.description}} 
-          </td>
-          <td>
-            {{p.dateDebut}} 
-          </td>
-          <td>
-            {{p.dateFin}}
-          </td>
-          <td>
-            {{p.etat}}
-          </td>
-          <td>
-            {{p.etat}}
-          </td>
-        </tr>
-         
-  
-      </tbody>
-    </table>
+                    <td class="align-items-center">
+                     
+                      <button _ngcontent-c5="" class="btn btn-1 btn-primary align-items-right"
+                          type="button" (click)="editProjet(p)">Modifier</button>
+                      <button _ngcontent-c5="" class="btn btn-1 btn-danger align-items-right"
+                          type="button" (click)="deleteProjet(p.idProjet)">Supprimer</button>
+                  </td>
+
+                  </tr>
+                  
+                </tbody>
+              </table>
+            </div>
+    
+          </div>
+        </div>
+      </div>
+      
+    </div>
