@@ -1,0 +1,53 @@
+
+   
+<div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" style="max-height: 600px; background-image: url(assets/img/theme/team1.png); background-size: cover; background-position: center top;">
+    <!-- Mask -->
+    <span class="mask bg-gradient-danger opacity-1"></span>
+    <div class="container-fluid d-flex align-items-center">
+      <div class="row">
+        <div class="col-lg-10 col-md-10">
+          <p class="text-white mt-0 mb-5">Candidater</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Page content -->
+    <div class="container-fluid mt--7">
+      <div class="row justify-content-center">
+          <div class="col-lg-6 col-md-8">
+              <div class="card bg-secondary shadow border-0">
+                  <div class="card-body px-lg-5 py-lg-5">
+                      <div class="text-center text-muted mb-4">
+                          <p>Candidater</p>
+                      </div>
+                      <form role="form" >
+                          <div class="form-group">
+                          </div>
+                    
+                          <div class="form-group">
+                            <label>Date</label>
+                              <div class="input-group input-group-alternative">
+                                  <div class="input-group-prepend">
+                                      <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                                  </div>
+                                  <input class="form-control" [(ngModel)]="candidature.date" name="date"
+                                       type="date">
+                              </div>
+                          </div>
+                    
+                          <div class="form-group">
+                            <label for="exampleFormControlTextarea1">Lettre Motivation</label>
+                            <textarea class="form-control"  [(ngModel)]="candidature.lettreMotivation" rows="3"></textarea>
+                          </div>
+
+                          <div class="text-center">
+                              <button type="button" class="btn btn-primary mt-4" (click)="validerCandidature()">Candidater</button>
+                              <button type="button" class="btn btn-danger mt-4" >Annuler</button>
+                          </div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+      </div>
+
