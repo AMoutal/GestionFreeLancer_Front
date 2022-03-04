@@ -37,6 +37,8 @@ import { EditProfileComponent } from './pages/edit-profile/edit-profile.componen
 import { EditRecruteurComponent } from './pages/edit-recruteur/edit-recruteur.component';
 import { EditProjetComponent } from './pages/edit-projet/edit-projet.component';
 import { RegisterJobOwnerComponent } from './pages/register-job-owner/register-job-owner.component';
+import { RegisterFreelancerComponent } from './pages/register-freelancer/register-freelancer.component';
+import { CandidatureComponent } from './pages/candidature/candidature.component';
 
 
 @Injectable()
@@ -78,7 +80,9 @@ intercept(req:HttpRequest<any>, next: HttpHandler){
     EditRecruteurComponent,
     EditRecruteurComponent,
     EditProfileComponent,
-    RegisterJobOwnerComponent
+    RegisterJobOwnerComponent,
+    RegisterFreelancerComponent,
+    CandidatureComponent
   ],
   providers: [
     AppService,
