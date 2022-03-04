@@ -15,7 +15,7 @@
     <!-- Page content -->
     <div class="container-fluid mt--7">
       <!-- Table -->
-      <div class="row">
+      <div class="row"[hidden]="!authenticated()">
         <div class="col">
           <div class="card shadow">
             <div class="card-header border-0">
@@ -32,8 +32,8 @@
                     <th scope="col">Date fin</th>
                     <th scope="col">Remuneration</th>
                     <th scope="col">Etat</th>
-                    <th scope="col">Action</th>
-                    <th scope="col">Candidater</th>
+                    <th scope="col"[hidden]="authoritiesF() || authoritiesJ()">Action</th>
+                    <th scope="col"[hidden]="authoritiesJ()">Candidater</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -86,14 +86,14 @@
                     </td>
 
 
-                    <td class="align-items-center">
+                    <td class="align-items-center"[hidden]="authoritiesF() || authoritiesJ()">
                      
                       <button _ngcontent-c5="" class="btn btn-1 btn-primary align-items-right"
                           type="button" (click)="editProjet(p)">Modifier</button>
                       <button _ngcontent-c5="" class="btn btn-1 btn-danger align-items-right"
                           type="button" (click)="deleteProjet(p.idProjet)">Supprimer</button>
                   </td>
-                  <td>
+                  <td [hidden]="authoritiesJ()">
                   <button _ngcontent-c5="" class="btn btn-1 btn-primary align-items-right"
                           type="button" (click)="candidater(p)">Candidater</button>
                   </td>

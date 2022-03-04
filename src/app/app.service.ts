@@ -16,6 +16,10 @@ export class AppService
     constructor(private httpClient: HttpClient) { }
     authenticate(type: string, credentials, callback)
     {
+        this.isAdmin = false;
+        this.isFreelancer = false;
+        this.isJobowner = false;
+        this.authenticated = false;
         const headers = new HttpHeaders(
             credentials ? { authorization: 'Basic ' + btoa(credentials.username + ':' + credentials.password) } : {});
         console.log(headers.get("authorization"));

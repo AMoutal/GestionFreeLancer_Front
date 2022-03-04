@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AppService } from 'src/app/app.service';
 import { Entreprise } from 'src/app/models/entreprise';
 import { EntrepriseService } from 'src/app/services/entreprise.service';
 
@@ -12,7 +13,7 @@ export class EntrepriseComponent implements OnInit
 {
     entreprises: any;         // roles: Role[]
     entreprise: Entreprise = new Entreprise();
-    constructor(private entrepriseService: EntrepriseService, private router: Router) { }
+    constructor(private appService:AppService, private entrepriseService: EntrepriseService, private router: Router) { }
 
     ngOnInit(): void
     {
@@ -52,5 +53,20 @@ export class EntrepriseComponent implements OnInit
         this.router.navigate(['/editEntreprise']); // localhost:4200/#/base/editUser/5
         // navigation entre le composant forms.component.ts et editUser.component.ts dans lequel on va editer un utilisateur
     }
+
+    public authoritiesF():boolean{
+        console.log("F" +this.appService.isFreelancer)
+        return this.appService.isFreelancer
+      }
+    
+      public authoritiesJ():boolean{
+        console.log("J" + this.appService.isJobowner)
+        return this.appService.isJobowner
+      }
+
+      authenticated(){
+        return this.appService.authenticated;
+      }
+    
 
 }

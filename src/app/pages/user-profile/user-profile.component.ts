@@ -52,5 +52,8 @@ export class UserProfileComponent implements OnInit {
     return this.appService.isJobowner
   }
 
+  authenticated(){
+    return this.appService.authenticated;
+  }
 
 }
