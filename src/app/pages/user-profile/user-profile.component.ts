@@ -42,11 +42,13 @@ export class UserProfileComponent implements OnInit {
     this.router.navigate(['/user-profile/edit', user.idUser]);
   }
 
-  public authoritiesF(){
+  public authoritiesF():boolean{
+    console.log("F" +this.appService.isFreelancer)
     return this.appService.isFreelancer
   }
 
-  public authoritiesJ(){
+  public authoritiesJ():boolean{
+    console.log("J" + this.appService.isJobowner)
     return this.appService.isJobowner
   }
 

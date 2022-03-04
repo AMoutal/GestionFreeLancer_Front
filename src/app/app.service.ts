@@ -39,7 +39,7 @@ export class AppService
                         {
                             this.isFreelancer = true;
                         }
-                        if (r['libelle'] == "jobowner") 
+                        if (r['libelle'] == "jobOwner") 
                         {
                             this.isJobowner = true;
                         }
