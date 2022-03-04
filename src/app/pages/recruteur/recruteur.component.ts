@@ -34,4 +34,19 @@ export class RecruteurComponent implements OnInit {
     this.router.navigate(['/recruteurs/edit-recruteur']);
   }
 
+  public authoritiesF():boolean{
+    console.log("F" +this.appService.isFreelancer)
+    return this.appService.isFreelancer
+  }
+
+  public authoritiesJ():boolean{
+    console.log("J" + this.appService.isJobowner)
+    return this.appService.isJobowner
+  }
+
+  authenticated(){
+    return this.appService.authenticated;
+  }
+
+
 }

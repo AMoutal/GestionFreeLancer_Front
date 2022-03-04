@@ -14,7 +14,7 @@
 <!-- Page content -->
 <div class="container-fluid mt--7">
     <!-- Table -->
-    <div class="row">
+    <div class="row"[hidden]="!authenticated()">
         <div class="col">
             <div class="card shadow">
                 <div class="card-header border-0">
@@ -29,7 +29,7 @@
                                 <th scope="col">Ville</th>
                                 <th scope="col">Pays</th>
                                 <th scope="col">Email</th>
-                                <th scope="col">Action</th>
+                                <th scope="col" [hidden]="authoritiesF() || authoritiesJ()">Action</th>
                                 <th scope="col"></th>
                             </tr>
                         </thead>
@@ -66,7 +66,7 @@
                                     </div>
                                 </td>-->
 
-                                <td class="align-items-center">
+                                <td class="align-items-center"[hidden]="authoritiesF() || authoritiesJ()">
                                     <button _ngcontent-c5="" class="btn btn-1 btn-primary align-items-right"
                                         type="button" (click)="editEntreprise(e)">Modifier</button>
                                     <button _ngcontent-c5="" class="btn btn-1 btn-danger align-items-right"
@@ -90,7 +90,7 @@
         </div>
     </div>
 <br>
-    <div class="row justify-content-center">
+    <div class="row justify-content-center"[hidden]="!authenticated() || authoritiesF() || authoritiesJ()">
         <div class="col-lg-6 col-md-8">
             <div class="card bg-secondary shadow border-0">
 

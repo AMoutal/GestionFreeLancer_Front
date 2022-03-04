@@ -13,7 +13,7 @@
   <!-- Page content -->
   <div class="container-fluid mt--7">
     <!-- Table -->
-    <div class="row">
+    <div class="row"[hidden]="!authenticated()">
       <div class="col">
         <div class="card shadow">
           <div class="card-header border-0">
@@ -28,7 +28,7 @@
                   <th scope="col">Entreprise</th>
                   <th scope="col">Département</th>
                   <th scope="col">Email</th>
-                  <th scope="col">Action</th>
+                  <th scope="col"[hidden]="authoritiesF() || authoritiesJ()">Action</th>
                 </tr>
               </thead>
               <tbody>
@@ -64,7 +64,7 @@
                        </span>  
                   </td>
   
-                  <td class="align-items-center">
+                  <td class="align-items-center"[hidden]="authoritiesF() || authoritiesJ()">
                     <button _ngcontent-c5="" class="btn btn-1 btn-primary align-items-right"
                         type="button" (click)="editJobOwner(j)">Modifier</button>
                     <button _ngcontent-c5="" class="btn btn-1 btn-danger align-items-right"

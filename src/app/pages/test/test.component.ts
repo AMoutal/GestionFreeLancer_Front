@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AppService } from 'src/app/app.service';
 import { Test } from 'src/app/models/test';
 import { TestService } from 'src/app/services/test.service';
 
@@ -13,7 +14,7 @@ export class TestComponent implements OnInit {
   tests: any;
   test: Test = new Test();
 
-  constructor(private testService:TestService, private router:Router) { }
+  constructor(private appService:AppService, private testService:TestService, private router:Router) { }
 
   ngOnInit(): void {
     this.findAll();
@@ -38,6 +39,21 @@ export class TestComponent implements OnInit {
     localStorage.removeItem("id_test");
     localStorage.setItem("id_test", test.idTest.toString());
     this.router.navigate(['/editTests']);
+  }
+
+  
+  public authoritiesF():boolean{
+    console.log("F" +this.appService.isFreelancer)
+    return this.appService.isFreelancer
+  }
+
+  public authoritiesJ():boolean{
+    console.log("J" + this.appService.isJobowner)
+    return this.appService.isJobowner
+  }
+
+  authenticated(){
+    return this.appService.authenticated;
   }
 
 }
