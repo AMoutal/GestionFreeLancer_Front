@@ -42,5 +42,13 @@ export class UserProfileComponent implements OnInit {
     this.router.navigate(['/user-profile/edit', user.idUser]);
   }
 
+  public authoritiesF(){
+    return this.appService.isFreelancer
+  }
+
+  public authoritiesJ(){
+    return this.appService.isJobowner
+  }
+
 
 }

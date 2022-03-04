@@ -71,4 +71,20 @@ export class EditProfileComponent implements OnInit {
     this.router.navigateByUrl("user-profile");
   }
 
+  public authoritiesF(){
+    if(this.appService.isFreelancer==true){
+      return false;
+    } else {
+      return true;
+    }
+  }
+
+  public authoritiesJ(){
+    if(this.appService.isJobowner==true){
+      return false;
+    } else {
+      return true;
+    }
+  }
+
 }
