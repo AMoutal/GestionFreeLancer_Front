@@ -32,6 +32,11 @@ import { FreelancersComponent } from './pages/freelancers/freelancers.component'
 import { TestComponent } from './pages/test/test.component';
 import { ListeProjetComponent } from './pages/admin/liste-projet/liste-projet.component';
 import { EditFreelancerComponent } from './pages/edit-freelancer/edit-freelancer.component';
+import { EditTestComponent } from './pages/edit-test/edit-test.component';
+import { EditProfileComponent } from './pages/edit-profile/edit-profile.component';
+import { EditRecruteurComponent } from './pages/edit-recruteur/edit-recruteur.component';
+import { EditProjetComponent } from './pages/edit-projet/edit-projet.component';
+import { RegisterJobOwnerComponent } from './pages/register-job-owner/register-job-owner.component';
 
 
 @Injectable()
@@ -67,7 +72,13 @@ intercept(req:HttpRequest<any>, next: HttpHandler){
     TestComponent,
     FreelancersComponent,
     EditFreelancerComponent,
-    ListeProjetComponent
+    ListeProjetComponent,
+    EditProjetComponent,
+    EditTestComponent,
+    EditRecruteurComponent,
+    EditRecruteurComponent,
+    EditProfileComponent,
+    RegisterJobOwnerComponent
   ],
   providers: [
     AppService,
@@ -82,7 +93,9 @@ intercept(req:HttpRequest<any>, next: HttpHandler){
     EvaluationEntrepriseService,
     UtilisateurService,
     EntrepriseService,
+    
     {provide: HTTP_INTERCEPTORS, useClass: XhrInterceptor, multi:true}],
+    
   bootstrap: [AppComponent]
 })
 export class AppModule { }

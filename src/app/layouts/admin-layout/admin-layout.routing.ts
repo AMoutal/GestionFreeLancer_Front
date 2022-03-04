@@ -10,6 +10,13 @@ import { EntrepriseComponent } from 'src/app/pages/entreprise/entreprise.compone
 import { EditFreelancerComponent } from 'src/app/pages/edit-freelancer/edit-freelancer.component';
 import { EditEntrepriseComponent } from 'src/app/pages/edit-entreprise/edit-entreprise.component';
 import { TestComponent } from 'src/app/pages/test/test.component';
+import { EditTestComponent } from 'src/app/pages/edit-test/edit-test.component';
+import { EditProfileComponent } from 'src/app/pages/edit-profile/edit-profile.component';
+import { EditProjetComponent } from 'src/app/pages/edit-projet/edit-projet.component';
+import { EditRecruteurComponent } from 'src/app/pages/edit-recruteur/edit-recruteur.component';
+import { RecruteurComponent } from 'src/app/pages/recruteur/recruteur.component';
+import { RegisterFreelancerComponent } from 'src/app/pages/register-freelancer/register-freelancer.component';
+import { RegisterJobOwnerComponent } from 'src/app/pages/register-job-owner/register-job-owner.component';
 
 export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard', component: DashboardComponent },
@@ -21,5 +28,12 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'entreprises', component: EntrepriseComponent },
     { path: 'freelancers/edit-freelancer', component: EditFreelancerComponent },
     { path: 'editEntreprise', component: EditEntrepriseComponent },
-    { path: 'tests',           component: TestComponent}
+    { path: 'tests',           component: TestComponent},
+    { path: 'editTests',           component: EditTestComponent},
+    { path: 'registerf', component: RegisterFreelancerComponent },
+    { path: 'registerj', component: RegisterJobOwnerComponent },
+    { path: 'admin-projet/edit-projet',   component: EditProjetComponent },
+    { path: 'recruteurs',           component: RecruteurComponent},
+    { path: 'recruteurs/edit-recruteur', component: EditRecruteurComponent },
+    { path: 'edit-profile', component: EditProfileComponent }
 ];

@@ -11,9 +11,11 @@ export const ROUTES: RouteInfo[] = [
     { path: '/dashboard', title: 'Dashboard',  icon: 'ni-tv-2 text-primary', class: '' },
     { path: '/user-profile', title: 'User profile',  icon:'ni-single-02 text-yellow', class: '' },
     { path: '/tables', title: 'Tables',  icon:'ni-bullet-list-67 text-red', class: '' },
-    { path: '/freelancers', title: 'Freelancers',  icon:'ni-bullet-list-67 text-red', class: '' },
-    { path: '/entreprises', title: 'Entreprises',  icon:'ni-bullet-list-67 text-red', class: '' },
-    { path: '/admin-projet', title: 'Liste projet',  icon:'ni-single-02 text-yellow', class: '' }
+    { path: '/freelancers', title: 'Freelancers',  icon:'ni ni-spaceship text-indigo', class: '' },
+    { path: '/entreprises', title: 'Entreprises',  icon:'ni ni-planet text-red', class: '' },
+    { path: '/admin-projet', title: 'Liste projet',  icon:'ni ni-atom text-orange:hover', class: '' },
+    { path: '/tests', title: 'Tests',  icon:'"ni ni-compass-04 text-blue', class: '' },
+    { path: '/recruteurs', title: 'Recruteurs',  icon:'ni-paper-diploma text-green', class: '' }
 ];
 
 @Component({

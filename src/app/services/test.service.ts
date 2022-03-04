@@ -14,12 +14,22 @@ export class TestService {
     return this.httpClient.get(this.baseURL);
   }
 
+  public findOne(id: number): Observable<any>
+  {
+      return this.httpClient.get(this.baseURL+"/"+id);
+  }
+
   public delete(id:number): Observable<any>{
     return this.httpClient.delete(this.baseURL+"/"+id);
   }
 
   public save(test:any): Observable<any>{
     return this.httpClient.post(this.baseURL,test);
+  }
+
+  public update(test:any): Observable<any>{
+    let testParse = JSON.parse(test);
+    return this.httpClient.put(this.baseURL+"/"+testParse.idTest, testParse);
   }
 
 }
