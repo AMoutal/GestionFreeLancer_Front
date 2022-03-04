@@ -5,7 +5,7 @@
   <div class="container-fluid d-flex align-items-center">
     <div class="row">
       <div class="col-lg-7 col-md-10">
-        <h1 class="display-2 text-white">Hello Username</h1>
+        <h1 class="display-2 text-white">Hello {{freelancer.username}}</h1>
         <p class="text-white mt-0 mb-5">Vous êtes sur votre page profil, remplissez vos informations pour être remarqué !</p>
       </div>
     </div>
@@ -20,8 +20,8 @@
             <div class="col-8">
               <h3 class="mb-0">Mon compte</h3>
             </div>
-            <div class="col-4 text-right">
-              <a href="#!" class="btn btn-sm btn-default">Editer le profil</a>
+            <div class="col-4 text-right"> 
+              <a routerLinkActive="active" [routerLink]="['/edit-profile']" class="btn btn-sm btn-default">Editer le profil</a>
             </div>
           </div>
         </div>
@@ -30,19 +30,19 @@
             <h6 class="heading-small text-muted mb-4">Informations utilisateur</h6>
             <div class="pl-lg-4">
               <div class="row">
-                <div class="col-lg-6">
+                <div class="col-lg-4">
                   <div class="form-group">
                     <label class="form-control-label" for="input-username">Username</label>
                     <p>{{freelancer.username}}</p>
                   </div>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-4">
                   <div class="form-group">
                     <label class="form-control-label" for="input-username">Password</label>
                     <p>*************</p>
                   </div>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-4">
                   <div class="form-group">
                     <label class="form-control-label" for="input-email">Email</label>
                     <p>{{freelancer.emailUser}}</p>
@@ -79,56 +79,19 @@
                   <div class="form-group">
                     <label class="form-control-label" for="input-disponibilite">Disponibilité  </label>
                     <br>
-                    <input type="checkbox" id="input-email" class="checkbox" (checked)="freelancer.disponible" disabled="">
+                    <input type="checkbox" id="input-email" class="checkbox" [checked]="freelancer.disponible" disabled="">
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- Entreprise 
-            <h6 class="heading-small text-muted mb-4">Informations entreprise</h6>
-            <div class="pl-lg-4">
-              <div class="row">
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label class="form-control-label" for="input-address">Nom</label>
-                    <input id="input-address" class="form-control form-control-alternative" placeholder="Home Address" value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09" type="text">
-                  </div>
-                </div>
-                <div class="col-md-8">
-                  <div class="form-group">
-                    <label class="form-control-label" for="input-address">Adresse</label>
-                    <input id="input-address" class="form-control form-control-alternative" placeholder="Home Address" value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09" type="text">
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-lg-4">
-                  <div class="form-group">
-                    <label class="form-control-label" for="input-city">Ville</label>
-                    <input type="text" id="input-city" class="form-control form-control-alternative" placeholder="City" value="New York">
-                  </div>
-                </div>
-                <div class="col-lg-4">
-                  <div class="form-group">
-                    <label class="form-control-label" for="input-country">Pays</label>
-                    <input type="text" id="input-country" class="form-control form-control-alternative" placeholder="Country" value="United States">
-                  </div>
-                </div>
-                <div class="col-lg-4">
-                  <div class="form-group">
-                    <label class="form-control-label" for="input-country">Code Postal</label>
-                    <input type="number" id="input-postal-code" class="form-control form-control-alternative" placeholder="Postal code">
-                  </div>
-                </div>
-              </div>
-            </div>-->
           </form>
         </div>
       </div>
     </div>
   </div>
-  <div class="row">
+  <br>
+ <div class="row">
     <div class="col-xl-12 order-xl-1">
       <div class="card bg-secondary shadow">
         <div class="card-header bg-white border-0">
@@ -137,7 +100,7 @@
               <h3 class="mb-0">Mon compte</h3>
             </div>
             <div class="col-4 text-right">
-              <a href="#!" class="btn btn-sm btn-default">Editer le profil</a>
+              <a routerLinkActive="active" [routerLink]="['/edit-profile']" class="btn btn-sm btn-default">Editer le profil</a>
             </div>
           </div>
         </div>
@@ -146,19 +109,19 @@
             <h6 class="heading-small text-muted mb-4">Informations utilisateur</h6>
             <div class="pl-lg-4">
               <div class="row">
-                <div class="col-lg-6">
+                <div class="col-lg-4">
                   <div class="form-group">
                     <label class="form-control-label" for="input-username">Username</label>
                     <p>{{jobowner.username}}</p>
                   </div>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-4">
                   <div class="form-group">
                     <label class="form-control-label" for="input-username">Password</label>
                     <p>*************</p>
                   </div>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-4">
                   <div class="form-group">
                     <label class="form-control-label" for="input-email">Email</label>
                     <p>{{jobowner.emailUser}}</p>
@@ -181,7 +144,7 @@
               </div>
             </div>
             <hr class="my-4" />
-            <!-- Informations pro -->
+
              <h6 class="heading-small text-muted mb-4">Informations professionnelles</h6>
              <div class="pl-lg-4">
               <div class="row">
@@ -209,6 +172,6 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> 
 </div>
 

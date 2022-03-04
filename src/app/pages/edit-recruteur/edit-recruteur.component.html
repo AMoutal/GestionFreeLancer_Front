@@ -1,11 +1,11 @@
-<div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" style="max-height: 600px; background-image: url(assets/img/theme/team1.png); background-size: cover; background-position: center top;">
+<div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" style="max-height: 600px; background-image: url(assets/img/theme/recruteur.png); background-size: cover; background-position: center top;">
     <!-- Mask -->
     <span class="mask bg-gradient-danger opacity-1"></span>
     <div class="container-fluid d-flex align-items-center">
       <div class="row">
         <div class="col-lg-10 col-md-10">
-          <h1 class="display-2 text-white">Freelancers</h1>
-          <p class="text-white mt-0 mb-5">Editez les données des freelancers</p>
+          <h1 class="display-2 text-white">Recruteurs</h1>
+          <p class="text-white mt-0 mb-5">Editez les données des recruteurs</p>
         </div>
       </div>
     </div>
@@ -17,16 +17,16 @@
               <div class="card bg-secondary shadow border-0">
                   <div class="card-body px-lg-5 py-lg-5">
                       <div class="text-center text-muted mb-4">
-                          <p>Mettre à jour les données freelancers</p>
+                          <p>Mettre à jour les données des recruteurs</p>
                       </div>
-                      <form role="form"  [formGroup]="editForm">
+                      <form role="form"  [formGroup]="editJobOwner">
                           <div class="form-group">
                             <label>Nom</label>
                               <div class="input-group input-group-alternative mb-3">
                                   <div class="input-group-prepend">
-                                      <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
+                                      <span class="input-group-text"><i class="ni ni-circle-08"></i></span>
                                   </div>
-                                  <input class="form-control" [(ngModel)]="freelancer.nomUser" name="nomUser" 
+                                  <input class="form-control" [(ngModel)]="jobowner.nomUser" name="nomUser" 
                                       type="text">
                               </div>
                           </div>
@@ -34,41 +34,56 @@
                             <label>Prénom</label>
                               <div class="input-group input-group-alternative mb-3">
                                   <div class="input-group-prepend">
-                                      <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                                      <span class="input-group-text"><i class="ni ni-circle-08"></i></span>
                                   </div>
-                                  <input class="form-control" [(ngModel)]="freelancer.prenomUser" name="prenomUser"
+                                  <input class="form-control" [(ngModel)]="jobowner.prenomUser" name="prenomUser"
                                        type="text">
-                              </div>
-                          </div>
-                          <div class="form-group">
-                            <label>Statut</label>
-                              <div>
-                                  <input class="checkbox" [(ngModel)]="freelancer.disponible" name="disponible"
-                                       type="checkbox">
                               </div>
                           </div>
                           <div class="form-group">
                             <label>Métier</label>
                               <div class="input-group input-group-alternative">
                                   <div class="input-group-prepend">
-                                      <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                                      <span class="input-group-text"><i class="ni ni-briefcase-24"></i></span>
                                   </div>
-                                  <input class="form-control" [(ngModel)]="freelancer.metier" name="metier"
+                                  <input class="form-control" [(ngModel)]="jobowner.metier" name="metier"
                                        type="text">
                               </div>
                           </div>
+                         <div class="form-group">
+                            <label>Entreprise</label>
+                              <div class="input-group input-group-alternative">
+                                  <div class="input-group-prepend">
+                                      <span class="input-group-text"><i class="ni ni-building"></i></span>
+                                  </div>
+                                  <select name="entreprise" [(ngModel)]="jobowner.entreprise">
+                                    <option *ngFor="let e of entreprises" [ngValue]="e">{{e.nom}}</option>
+                                </select>
+                              </div>
+                          </div>
+                          <div class="form-group">
+                            <label>Departement</label>
+                              <div class="input-group input-group-alternative">
+                                  <div class="input-group-prepend">
+                                      <span class="input-group-text"><i class="ni ni-badge"></i></span>
+                                  </div>
+                                  <input class="form-control" [(ngModel)]="jobowner.departement" name="departement"
+                                       type="text">
+                              </div>
+                          </div>
+                          
                           <div class="form-group">
                             <label>Email</label>
                               <div class="input-group input-group-alternative">
                                   <div class="input-group-prepend">
                                       <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                                   </div>
-                                  <input class="form-control" [(ngModel)]="freelancer.emailUser" name="emailUser"
+                                  <input class="form-control" [(ngModel)]="jobowner.emailUser" name="emailUser"
                                        type="text">
                               </div>
                           </div>
                           <div class="text-center">
-                              <button type="button" class="btn btn-primary mt-4" (click)="updateFreelancer()">Sauvegarder les changements</button>
+                              <button type="button" class="btn btn-primary mt-4" (click)="updateJobOwner()">Sauvegarder les changements</button>
                               <button type="button" class="btn btn-danger mt-4" (click)="cancel()">Annuler</button>
                           </div>
                       </form>

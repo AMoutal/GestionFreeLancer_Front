@@ -1,0 +1,83 @@
+<div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" style="max-height: 600px; background-image: url(assets/img/theme/recruteur.png); background-size: cover; background-position: center top;">
+    <!-- Mask -->
+    <span class="mask bg-gradient-danger opacity-1"></span>
+    <div class="container-fluid d-flex align-items-center">
+      <div class="row">
+        <div class="col-lg-7 col-md-10">
+          <h1 class="display-2 text-white">Recruteurs</h1>
+          <p class="text-white mt-0 mb-5">Consultez la liste des recruteurs en quête de nouveaux talents !</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Page content -->
+  <div class="container-fluid mt--7">
+    <!-- Table -->
+    <div class="row">
+      <div class="col">
+        <div class="card shadow">
+          <div class="card-header border-0">
+            <h3 class="mb-0">Liste des recruteurs</h3>
+          </div>
+          <div class="table-responsive">
+            <table class="table align-items-center table-flush">
+              <thead class="thead-light">
+                <tr>
+                  <th scope="col">Nom</th>
+                  <th scope="col">Métier</th>
+                  <th scope="col">Entreprise</th>
+                  <th scope="col">Département</th>
+                  <th scope="col">Email</th>
+                  <th scope="col">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let j of jobowners">
+                  <th scope="row">
+                    <div class="media align-items-center">
+                      <a href="javascript:void(0)" class="avatar rounded-circle mr-3">
+                        <img alt="Image placeholder" src="../assets/img/theme/avatar.jpg">
+                      </a>
+                      <div class="media-body">
+                        <span class="mb-0 text-sm">{{j.prenomUser}} {{j.nomUser}}</span>
+                      </div>
+                    </div>
+                  </th>
+                  <td>
+                    <span class="badge badge-dot mr-4">
+                     {{j.metier}}
+                    </span>                  
+                  </td>
+                  <td>
+                    <span class="badge badge-dot mr-4">
+                     {{j.entreprise.nom}}
+                    </span>                  
+                  </td>
+                  <td>
+                    <span class="badge badge-dot mr-4">
+                        {{j.departement}}
+                       </span>  
+                  </td>
+                  <td>
+                    <span class="badge badge-dot mr-4">
+                        {{j.emailUser}}
+                       </span>  
+                  </td>
+  
+                  <td class="align-items-center">
+                    <button _ngcontent-c5="" class="btn btn-1 btn-primary align-items-right"
+                        type="button" (click)="editJobOwner(j)">Modifier</button>
+                    <button _ngcontent-c5="" class="btn btn-1 btn-danger align-items-right"
+                        type="button" (click)="deleteJobOwner(j.idUser)">Supprimer</button>
+                </td>
+                </tr>
+                
+              </tbody>
+            </table>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+    
+  </div>

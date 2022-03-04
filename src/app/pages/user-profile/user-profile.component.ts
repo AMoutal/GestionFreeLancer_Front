@@ -16,7 +16,7 @@ import { UtilisateurService } from 'src/app/services/utilisateur.service';
 })
 export class UserProfileComponent implements OnInit {
 
-
+  freelancers:[];
   utilisateurs:any;
   utilisateur:Utilisateur = new Utilisateur();
   freelancer:Freelancer=new Freelancer();
@@ -25,14 +25,17 @@ export class UserProfileComponent implements OnInit {
   constructor(private utilisateurService:UtilisateurService, private router:Router, private appService:AppService, private freelancerService:FreelancerService, private jobownerService:JobOwnerService) { }
 
   ngOnInit() {
+
   this.idUserStock=this.appService.idUserStock;
+  console.log("user profile " + this.idUserStock)
   this.findOne(this.idUserStock);
   }
 
   findOne(id:number){
-    this.freelancerService.findOne(id).subscribe(data => {this.freelancer = data;}); 
-    this.jobownerService.findOne(id).subscribe(data => {this.jobowner = data;}); 
+    this.freelancerService.findOne(id).subscribe(data => {this.freelancer = data; console.log(this.freelancer.username)}); 
+  this.jobownerService.findOne(id).subscribe(data => {this.jobowner = data;}); 
   }
+
 
   editUser(user:Utilisateur){
 
