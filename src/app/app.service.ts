@@ -10,7 +10,8 @@ export class AppService
     authenticated = false;
     responseAll: any;
     isAdmin = false;
-    isSuperuser = false;
+    isFreelancer = false;
+    isJobowner = false;
     idUserStock:any;
     constructor(private httpClient: HttpClient) { }
     authenticate(type: string, credentials, callback)
@@ -27,20 +28,26 @@ export class AppService
                 this.idUserStock=this.responseAll['idUser'];
                 if (this.responseAll['username'] != null)
                 {
-                    console.log("isAdmin= " + this.isAdmin);
                     this.authenticated = true;
                     for (let r of this.responseAll['roles'])
-                    {
+                    { console.log(r['libelle'])
                         if (r['libelle'] == "admin") 
                         {
                             this.isAdmin = true;
                         }
-                        if (r['libelle'] == "superuser") 
+                        if (r['libelle'] == "freelancer") 
                         {
-                            this.isSuperuser = true;
+                            this.isFreelancer = true;
+                        }
+                        if (r['libelle'] == "jobowner") 
+                        {
+                            this.isJobowner = true;
                         }
                     }
                 }
+                console.log("isAdmin= " + this.isAdmin);
+                console.log("isFreelancer= " + this.isFreelancer);
+                console.log("isJobowner= " + this.isJobowner);
 
                 if (type == "user" && !this.isAdmin)
                 {
