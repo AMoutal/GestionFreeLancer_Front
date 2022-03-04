@@ -1,0 +1,196 @@
+<div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" style="max-height: 600px; background-image: url(assets/img/theme/profile-cover.jpg); background-size: cover; background-position: center top;">
+
+    <span class="mask bg-gradient-danger opacity-1"></span>
+
+    <div class="container-fluid d-flex align-items-center">
+      <div class="row">
+        <div class="col-lg-7 col-md-10">
+          <h1 class="display-2 text-white">Hello Username</h1>
+          <p class="text-white mt-0 mb-5">Vous êtes sur votre page profil, remplissez vos informations pour être remarqué !</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid mt--7">
+    <div class="row">
+      <div class="col-xl-12 order-xl-1">
+        <div class="card bg-secondary shadow">
+          <div class="card-header bg-white border-0">
+            <div class="row align-items-center">
+              <div class="col-8">
+                <h3 class="mb-0">Mon compte</h3>
+              </div>
+              <div class="col-4 text-right"> 
+                <a routerLinkActive="active" [routerLink]="['/user-profile']" class="btn btn-sm btn-success" (click)="updateProfileF()">Valider</a>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <form [formGroup]="editProfile" >
+              <h6 class="heading-small text-muted mb-4">Informations utilisateur</h6>
+              <div class="pl-lg-4">
+                <div class="row">
+                  <div class="col-lg-4">
+                    <div class="form-group">
+                      <label class="form-control-label" for="input-username">Username</label>
+                        <input [(ngModel)]="freelancer.username" formControlName="username" class="form-control"
+                        type="text">
+                    </div>
+                  </div>
+                  <div class="col-lg-4">
+                    <div class="form-group">
+                      <label class="form-control-label" for="input-username">Password</label>
+                      <input [(ngModel)]="freelancer.password" formControlName="password" class="form-control"
+                      type="text">
+                    </div>
+                  </div>
+                  <div class="col-lg-4">
+                    <div class="form-group">
+                      <label class="form-control-label" for="input-email">Email</label>
+                      <input [(ngModel)]="freelancer.emailUser" formControlName="emailUser" class="form-control"
+                      type="text">
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label class="form-control-label" for="input-first-name">Prénom</label>
+                      <input [(ngModel)]="freelancer.prenomUser" formControlName="prenomUser" class="form-control"
+                      type="text">
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label class="form-control-label" for="input-last-name">Nom</label>
+                      <input [(ngModel)]="freelancer.nomUser" formControlName="nomUser" class="form-control"
+                      type="text">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <hr class="my-4" />
+
+               <h6 class="heading-small text-muted mb-4">Informations professionnelles</h6>
+               <div class="pl-lg-4">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label class="form-control-label" for="input-username">Métier</label>
+                      <input [(ngModel)]="freelancer.metier" formControlName="metier" class="form-control"
+                      type="text">
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label class="form-control-label" for="input-disponibilite">Disponibilité  </label>
+                      <br>
+                      <input type="checkbox" id="input-email" class="checkbox" [checked]="freelancer.disponible"  formControlName="disponible">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+     <div class="row">
+      <div class="col-xl-12 order-xl-1">
+        <div class="card bg-secondary shadow">
+          <div class="card-header bg-white border-0">
+            <div class="row align-items-center">
+              <div class="col-8">
+                <h3 class="mb-0">Mon compte</h3>
+              </div>
+              <div class="col-4 text-right">
+                <a routerLinkActive="active" [routerLink]="['/user-profile']" class="btn btn-sm btn-success" (click)="updateProfileJ()">Valider</a>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <form [formGroup]="editProfile">
+              <h6 class="heading-small text-muted mb-4">Informations utilisateur</h6>
+              <div class="pl-lg-4">
+                <div class="row">
+                  <div class="col-lg-4">
+                    <div class="form-group">
+                      <label class="form-control-label" for="input-username">Username</label>
+                      <input [(ngModel)]="jobowner.username" formControlName="username" class="form-control"
+                      type="text">
+                    </div>
+                  </div>
+                  <div class="col-lg-4">
+                    <div class="form-group">
+                      <label class="form-control-label" for="input-username">Password</label>
+                      <input [(ngModel)]="jobowner.password" formControlName="password" class="form-control"
+                      type="text">
+                    </div>
+                  </div>
+                  <div class="col-lg-4">
+                    <div class="form-group">
+                      <label class="form-control-label" for="input-email">Email</label>
+                      <input [(ngModel)]="jobowner.emailUser" formControlName="emailUser" class="form-control"
+                      type="text">
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label class="form-control-label" for="input-first-name">Prénom</label>
+                      <input [(ngModel)]="jobowner.prenomUser" formControlName="prenomUser" class="form-control"
+                      type="text">
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label class="form-control-label" for="input-last-name">Nom</label>
+                      <input [(ngModel)]="jobowner.nomUser" formControlName="nomUser" class="form-control"
+                      type="text">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <hr class="my-4" />
+               <h6 class="heading-small text-muted mb-4">Informations professionnelles</h6>
+               <div class="pl-lg-4">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label class="form-control-label" for="input-first-name">Métier</label>
+                      <input [(ngModel)]="jobowner.metier" formControlName="metier" class="form-control"
+                      type="text">
+                    </div>
+                  </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                      <label class="form-control-label" for="input-first-name">Entreprise</label>
+                      <div class="input-group input-group-alternative">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="ni ni-building"></i></span>
+                        </div>
+                        <select formControlName="entreprise" [(ngModel)]="jobowner.entreprise">
+                          <option *ngFor="let e of entreprises" [ngValue]="e">{{e.nom}}</option>
+                      </select>
+                    </div>
+                    </div>
+                </div>
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label class="form-control-label" for="input-last-name">Département</label>
+                      <input [(ngModel)]="jobowner.departement" formControlName="departement" class="form-control"
+                      type="text">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form> 
+          </div>
+        </div>
+      </div>
+    </div> 
+  </div>
+  
+  
