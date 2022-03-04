@@ -1,5 +1,5 @@
 
-
+<div class="container">
     <div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" style="max-height: 600px; background-image: url(assets/img/theme/team1.png); background-size: cover; background-position: center top;">
       <!-- Mask -->
       <span class="mask bg-gradient-danger opacity-1"></span>
@@ -33,6 +33,7 @@
                     <th scope="col">Remuneration</th>
                     <th scope="col">Etat</th>
                     <th scope="col">Action</th>
+                    <th scope="col">Candidater</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -84,6 +85,7 @@
                       </span>
                     </td>
 
+
                     <td class="align-items-center">
                      
                       <button _ngcontent-c5="" class="btn btn-1 btn-primary align-items-right"
@@ -91,8 +93,12 @@
                       <button _ngcontent-c5="" class="btn btn-1 btn-danger align-items-right"
                           type="button" (click)="deleteProjet(p.idProjet)">Supprimer</button>
                   </td>
-
+                  <td>
+                  <button _ngcontent-c5="" class="btn btn-1 btn-primary align-items-right"
+                          type="button" (click)="candidater(p)">Candidater</button>
+                  </td>
                   </tr>
+
                   
                 </tbody>
               </table>
@@ -103,3 +109,4 @@
       </div>
       
     </div>
+    
